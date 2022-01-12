@@ -1,11 +1,11 @@
 <div class="container-fluid">
-  <div class="row align-items-center">
-    <div class="col-md-6 left-section">
+  <div class="row">
+    <div class="col left-section">
       <p>logo</p>
     </div>
-    <div class="col-md-6 right-section">
+    <div class="col right-section">
       <p>Already Using?</p>
-      <button [routerLink]="['/signin']" routerLinkActive="router-link-active" mat-button color="primary"> Sign in</button>
+      <button [routerLink]="['']" routerLinkActive="router-link-active" mat-button color="primary"> Sign in</button>
     </div>
   </div>
 </div>
@@ -28,10 +28,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Full Name</mat-label>
           <input matInput type="text" formControlName="fullName" placeholder="John Doe" />
-          <span *ngIf="fullName.valid"
-            mat-icon-button
-            matSuffix>
-            <mat-icon style="color: green;">check</mat-icon>
+          <span *ngIf="fullName.valid" mat-icon-button matSuffix>
+            <mat-icon style="color: #53d46a; font-weight: bold;">check</mat-icon>
           </span>
           <mat-error *ngIf="fullName.touched && fullName.hasError('required')">Full Name Is Required</mat-error>
         </mat-form-field>
@@ -40,10 +38,8 @@
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
           <input matInput type="email" formControlName="email" placeholder="test@gmail.com" />
-          <span *ngIf="email.valid"
-            mat-icon-button
-            matSuffix>
-            <mat-icon style="color: green;">check</mat-icon>
+          <span *ngIf="email.valid" mat-icon-button matSuffix>
+            <mat-icon style="color: #53d46a; font-weight: bold;">check</mat-icon>
           </span>
           <mat-error *ngIf="email.touched && email.hasError('required')">Email Is Required</mat-error>
           <mat-error *ngIf="email.touched && email.hasError('email')">Enter Valid Email</mat-error>
@@ -55,10 +51,8 @@
           <input type="tel" formControlName="tel" matInput placeholder="555-555-1234" />
           <mat-error *ngIf="tel.touched && tel.hasError('required')">Telephone Is Required</mat-error>
           <mat-error *ngIf="tel.touched && tel.hasError('tel')">Enter Valid Telephone</mat-error>
-          <span *ngIf="tel.valid"
-            mat-icon-button
-            matSuffix>
-            <mat-icon style="color: green;">check</mat-icon>
+          <span *ngIf="tel.valid" mat-icon-button matSuffix>
+            <mat-icon style="color: #53d46a; font-weight: bold;">check</mat-icon>
           </span>
         </mat-form-field>
 
@@ -74,12 +68,7 @@
         <mat-form-field appearance="outline" class="password">
           <mat-label>Enter your password</mat-label>
           <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
-          <span
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
+          <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
           </span>
           <mat-error *ngIf="password.touched && password.hasError('required')">Password is Required</mat-error>
@@ -89,18 +78,13 @@
         <mat-form-field appearance="outline">
           <mat-label>Confirm your password</mat-label>
           <input matInput formControlName="passwordConfirm" [type]="confirm ? 'password' : 'text'" />
-          <span
-            mat-icon-button
-            matSuffix
-            (click)="confirm = !confirm"
-            [attr.aria-label]="'confirm password'"
-            [attr.aria-pressed]="confirm">
+          <span mat-icon-button matSuffix (click)="confirm = !confirm" [attr.aria-label]="'confirm password'" [attr.aria-pressed]="confirm">
             <mat-icon>{{ confirm ? "visibility_off" : "visibility" }}</mat-icon>
           </span>
           <mat-error *ngIf="passwordConfirm.touched && form.hasError('passwordsNotMatching')">Password Do Not Match</mat-error>
         </mat-form-field>
 
-
+        <!-- sign up button -->
         <button mat-flat-button color="primary">Sign Up</button>
 
         <!-- check policy -->
