@@ -77,5 +77,32 @@
 @media screen and (max-width: 767px) {
   .container {
     padding: 40px 20px;
+    .password {
+      .strength {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+        margin-bottom: 20px;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.password {
+  position: relative;
+  .strength {
+    position: absolute;
+    right: -170px;
+    top: 0;
+    width: 150px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    p {
+      font-size: 12px;
+      padding-bottom: 10px;
+    }
   }
 }

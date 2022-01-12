@@ -65,14 +65,21 @@
         </mat-form-field>
 
         <!-- password -->
-        <mat-form-field appearance="outline" class="password">
-          <mat-label>Enter your password</mat-label>
-          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
-          <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-          </span>
-          <mat-error *ngIf="password.touched && password.hasError('required')">Password is Required</mat-error>
-        </mat-form-field>
+        <div class="password">
+          <mat-form-field style="width: 100%;" appearance="outline" class="password">
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
+            <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </span>
+          </mat-form-field>
+          <div class="strength" *ngIf="password.value">
+            <p>Password Strength</p>
+            <mat-password-strength
+            [password]="password.value">
+            </mat-password-strength>
+          </div>
+        </div>
 
         <!-- password confirm -->
         <mat-form-field appearance="outline">
