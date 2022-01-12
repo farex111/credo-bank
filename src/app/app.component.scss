@@ -16,6 +16,10 @@
 .container {
   padding: 120px 0;
   text-transform: capitalize;
+  .list {
+    position: relative;
+    animation: list 1s ease-in-out;
+  }
   h1 {
     font-size: 50px;
     font-weight: bold;
@@ -30,6 +34,8 @@
   }
   form {
     display: grid;
+    position: relative;
+    animation: anime 1s ease-in-out;
     span {
       cursor: pointer;
     }
@@ -75,6 +81,26 @@
       .strong::before {
         background-color: #23ad5c;
       }
+    }
+  }
+  @keyframes anime {
+    from {
+      bottom: -150px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0px;
+      opacity: 1;
+    }
+  }
+  @keyframes list {
+    from {
+      left: -150px;
+      opacity: 0;
+    }
+    to {
+      left: 0px;
+      opacity: 1;
     }
   }
 }
