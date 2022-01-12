@@ -31,7 +31,7 @@ export class AppComponent {
       date: new FormControl(''),
       password: new FormControl('', [Validators.required]),
       passwordConfirm: new FormControl('', [Validators.required]),
-      check: new FormControl(true),
+      check: new FormControl(false, [Validators.requiredTrue]),
     },
     { validators: CustomValidators.passwordsMatching }
   );
