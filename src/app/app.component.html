@@ -85,7 +85,7 @@
         </mat-form-field>
 
         <!-- sign up button -->
-        <button mat-flat-button color="primary">Sign Up</button>
+        <button (click)="openSnackBar()" [disabled]="!form.valid" mat-flat-button color="primary">Sign Up</button>
 
         <!-- check policy -->
         <mat-checkbox formControlName="check" color='primary'>i agree to our terms of service and privacy policy</mat-checkbox>

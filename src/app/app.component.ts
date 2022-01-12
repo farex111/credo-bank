@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { CustomValidators } from './custom-validator';
 
 @Component({
@@ -11,6 +12,9 @@ export class AppComponent {
   title = 'credo';
   hide = true;
   confirm = true;
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  constructor(private _snackBar: MatSnackBar) {}
 
   form: FormGroup = new FormGroup(
     {
@@ -23,17 +27,22 @@ export class AppComponent {
       date: new FormControl(''),
       password: new FormControl('', [Validators.required]),
       passwordConfirm: new FormControl('', [Validators.required]),
-      check: new FormControl(true)
+      check: new FormControl(true),
     },
     { validators: CustomValidators.passwordsMatching }
   );
 
-  register(form: any){
-    if (form.invalid){
-      return
+  register(form: any) {
+    if (form.invalid) {
+      return;
     }
     console.log(this.form.value);
-    
+  }
+  openSnackBar() {
+    this._snackBar.open('Your application has been sent', 'okey', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
   }
 
   get date(): FormControl {
