@@ -1,0 +1,80 @@
+.container-fluid {
+  padding: 28px;
+  text-transform: capitalize;
+  .left-section {
+    p {
+      font-weight: bold;
+      font-size: 22px;
+    }
+  }
+  .right-section {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+}
+.container {
+  padding: 120px 0;
+  text-transform: capitalize;
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+  }
+  ul li {
+    padding: 15px 0;
+    font-size: 22px;
+    i {
+      color: #4445f0;
+      padding-right: 10px;
+    }
+  }
+  form {
+    display: grid;
+    span {
+      cursor: pointer;
+    }
+    button {
+      padding: 8px;
+      font-size: 18px;
+    }
+    section {
+      padding-top: 15px;
+    }
+    .indicator {
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 10px 0;
+      span {
+        width: 100%;
+        height: 100%;
+        background-color: #ccc;
+        border-radius: 5px;
+        position: relative;
+      }
+      .medium {
+        margin: 0 10px;
+      }
+      span:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        border-radius: 5px;
+      }
+      .weak::before {
+        background-color: #ff4757;
+      }
+      .medium::before {
+        background-color: orange;
+      }
+      .strong::before {
+        background-color: #23ad5c;
+      }
+    }
+  }
+}
