@@ -49,6 +49,10 @@ export class AppComponent {
     });
   }
 
+  get check(): FormControl {
+    return this.form.get('check') as FormControl
+  }
+
   get date(): FormControl {
     return this.form.get('date') as FormControl;
   }
